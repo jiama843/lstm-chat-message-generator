@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d979803-78a9-4175-b070-b8bc582e9a40" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/lstm-chat-message-generator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lstm_model.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_provider.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/discord_json_to_txt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lstm_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/lstm_model.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,17 +16,89 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="lstm_model.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lstm_model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lstm_model.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="23" selection-start-column="23" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data_provider.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_provider.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="9" selection-end-column="32" />
+              <folding>
+                <element signature="e#1#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="discord_json_to_txt.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/discord_json_to_txt.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="241">
+              <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+              <folding>
+                <element signature="e#108#151#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chat.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/chat.txt">
           <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="chat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/chat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3073">
+              <caret column="2673204" selection-start-column="2673204" selection-end-column="2673204" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1266" />
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>The Great John</find>
+      <find>151521079486054400</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/lstm_model.py" />
+        <option value="$PROJECT_DIR$/data_provider.py" />
+        <option value="$PROJECT_DIR$/test/chat.txt" />
+        <option value="$PROJECT_DIR$/discord_json_to_txt.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1346" />
@@ -47,6 +117,11 @@
               <item name="lstm-chat-message-generator" type="b2602c69:ProjectViewProjectNode" />
               <item name="lstm-chat-message-generator" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="lstm-chat-message-generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lstm-chat-message-generator" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -57,6 +132,11 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\John\PycharmProjects\lstm-chat-message-generator\test" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -85,6 +165,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.24304539" />
       <window_info anchor="bottom" id="TODO" order="10" />
@@ -112,8 +193,47 @@
     <entry file="file://$PROJECT_DIR$/lstm_model.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1266" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lstm_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_provider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="9" selection-end-column="32" />
+          <folding>
+            <element signature="e#1#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/chat.txt">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/chat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3073">
+          <caret column="2673204" selection-start-column="2673204" selection-end-column="2673204" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/discord_json_to_txt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="22" column="27" lean-forward="true" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding>
+            <element signature="e#108#151#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
