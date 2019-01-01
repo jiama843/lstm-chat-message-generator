@@ -19,20 +19,17 @@ def parse_json(data):
 
 def print_msgs(json_data, channel_id, user_id):
     for msg in json_data["data"][channel_id]:
-        if(msg["t"] == user_id):
-            print(msg["m"])
+        #print(type(str(json_data["data"][channel_id][str(msg)]["u"])))
+        #print(type(user_id))
+        #print(str(json_data["data"][channel_id][str(msg)]["u"]) == user_id)
+        if(str(json_data["data"][channel_id][str(msg)]["u"]) == user_id):
+            print(json_data["data"][channel_id][str(msg)]["m"])
 
-#for file in files:
 
-# For each replay, train the model
-f = open(file, "r")
+f = open(file, encoding="utf8")
 print("Reading "+file+"...")
-
-# Batch of 2d input tensors
-input_batch = []
-output_batch = []
 
 # File global variables
 json_data = parse_json(f.read())
 
-print_msgs(json_data, "148597885418602497", "151521079486054400")
+print_msgs(json_data, "148597885418602497", "8")
