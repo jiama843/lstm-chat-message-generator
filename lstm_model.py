@@ -1,2 +1,32 @@
 import tensorflow as tf
+from tensorflow.contrib import rnn
+
 import numpy as np
+
+class LSTM_model:
+
+    def __init__(
+        self,
+        vocabulary_size,
+        batch_size,
+        sequence_length,
+        num_hidden_layers,
+        cells_size,
+        training=True):
+
+        self.word_count = vocabulary_size
+        self.input = tf.placeholder(tf.float32, shape=(batch_size, sequence_length))
+        self.output = tf.placeholer(tf.float32, shape=(batch_size, sequence_length))
+
+        rnn_cell = rnn.LSTMCell(num_hidden_layers)
+        self.cell = rnn_cell
+
+        with tf.variable_scope("rnn", reuse=tf.AUTO_REUSE):
+            softmax_layer = tf.get_variable("softmax_layer", [num_hidden_layers, vocabulary_size])
+            softmax_bias = tf.get_variable("softmax_bias", [vocabulary_size])
+
+        self.logits = tf.matmul(output, softmax_layer) + softmax_bias
+        self.probabilities = tf.nn.softmax(self.logits)
+        #self.probabilities =
+
+        pass
