@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d979803-78a9-4175-b070-b8bc582e9a40" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_provider.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_provider.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lstm_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/lstm_model.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +13,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="lstm_model.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="lstm_model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lstm_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="69" lean-forward="true" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+            <state relative-caret-position="408">
+              <caret line="30" column="53" lean-forward="true" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
               <folding>
                 <element signature="e#0#23#0" expanded="true" />
               </folding>
@@ -40,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_provider.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data_provider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data_provider.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="452">
@@ -114,8 +111,8 @@
         <option value="$PROJECT_DIR$/discord_json_to_txt.py" />
         <option value="$PROJECT_DIR$/test/chat_jack.txt" />
         <option value="$PROJECT_DIR$/generator.py" />
-        <option value="$PROJECT_DIR$/lstm_model.py" />
         <option value="$PROJECT_DIR$/data_provider.py" />
+        <option value="$PROJECT_DIR$/lstm_model.py" />
       </list>
     </option>
   </component>
@@ -288,22 +285,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lstm_model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="69" lean-forward="true" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_provider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="452">
           <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
           <folding>
             <element signature="e#1#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lstm_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="30" column="53" lean-forward="true" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
           </folding>
         </state>
       </provider>

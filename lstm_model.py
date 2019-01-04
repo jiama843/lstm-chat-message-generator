@@ -16,7 +16,7 @@ class LSTM_model:
 
         self.word_count = vocabulary_size
         self.input = tf.placeholder(tf.float32, shape=(batch_size, sequence_length))
-        self.output = tf.placeholer(tf.float32, shape=(batch_size, sequence_length))
+        self.output = tf.placeholder(tf.float32, shape=(batch_size, sequence_length))
 
         rnn_cell = rnn.LSTMCell(num_hidden_layers)
         self.cell = rnn_cell
@@ -25,8 +25,18 @@ class LSTM_model:
             softmax_layer = tf.get_variable("softmax_layer", [num_hidden_layers, vocabulary_size])
             softmax_bias = tf.get_variable("softmax_bias", [vocabulary_size])
 
+        with tf.variable_scope("rnn", reuse=tf.AUTO_REUSE):
+            inputs = self.input
+
+        inputs = tf.split(inputs, sequence_length, 1)
+
+        with tf.variable_scope("rnn", reuse=tf.AUTO_REUSE):
+            output = rnn_cell
+
         self.logits = tf.matmul(output, softmax_layer) + softmax_bias
         self.probabilities = tf.nn.softmax(self.logits)
         #self.probabilities =
+
+        #loss =
 
         pass
