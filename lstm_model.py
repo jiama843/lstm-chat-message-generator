@@ -10,13 +10,13 @@ class LSTM_model:
         vocabulary_size,
         batch_size,
         sequence_length,
+        target_length,
         num_hidden_layers,
-        cells_size,
         training=True):
 
         self.word_count = vocabulary_size
-        self.input = tf.placeholder(tf.float32, shape=(batch_size, sequence_length))
-        self.target = tf.placeholder(tf.float32, shape=(batch_size, sequence_length))
+        self.inputs = tf.placeholder(tf.float32, shape=(batch_size, sequence_length))
+        self.target = tf.placeholder(tf.float32, shape=(batch_size, target_length))
 
         rnn_cell = rnn.LSTMCell(num_hidden_layers)
         self.cell = rnn_cell
@@ -26,7 +26,7 @@ class LSTM_model:
             softmax_bias = tf.get_variable("softmax_bias", [vocabulary_size])
 
         with tf.variable_scope("rnn", reuse=tf.AUTO_REUSE):
-            inputs = self.input
+            inputs = self.inputs
 
         inputs = tf.split(inputs, sequence_length, 1)
 
@@ -38,6 +38,6 @@ class LSTM_model:
         self.probabilities = tf.nn.softmax(self.logits)
         #self.probabilities =
 
-        #loss =
+        loss = tf.losses.sparse_softmax_cross_entropy(labels=tf.convert_to_tensor(outputs, dtype='int32'), logits=self.logits)
 
         pass

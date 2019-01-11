@@ -6,12 +6,11 @@ import numpy as np
 # Hyperparameters
 BATCH_SIZE = 32
 SEQUENCE_LENGTH = 3
+TARGET_LENGTH = 1
 LEARNING_RATE = 0.01
-#DECAY_RATE = 0.97
 HIDDEN_LAYERS = 1000
-CELLS_SIZE = 2
 
-
+tensorboard_dir = "./data_summaries"
 
 g = tf.Graph()
 with g.as_default():
@@ -21,5 +20,10 @@ with g.as_default():
   # Sessions created in this scope will run operations from `g_1`.
   sess = tf.Session()
 
+  summaries = tf.summary.merge_all()
+  writer = tf.summary.FileWriter(tensorboard_dir)
+  writer.add_graph(sess.graph)
+  sess.run(tf.global_variables_initializer())
+
   # Replace 600 with a dynamic vocabulary length from data provider
-  lstm_nn = LSTM_model(600, BATCH_SIZE, SEQUENCE_LENGTH, HIDDEN_LAYERS, CELLS_SIZE)
+  lstm_nn = LSTM_model(600, BATCH_SIZE, SEQUENCE_LENGTH, HIDDEN_LAYERS)

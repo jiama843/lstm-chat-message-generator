@@ -43,23 +43,36 @@ def generate_dict(word_dict):
 def generate_data(file):
     f = open(file, "r")
     print("Reading " + file + "...")
+    phrase = f.read()
 
-    chat_dict = txt_to_dict(f.read())
+    chat_dict = txt_to_dict(phrase)
     data_dictionary = generate_dict(chat_dict)
+    normalized_word_arr = txt_to_np_arr(phrase, data_dictionary[0])
 
     input_batch = []
-    pass
+    output_batch = []
 
+    for i in range(0, len(normalized_word_arr) - 4):
+        input_batch.append([normalized_word_arr[i],
+                            normalized_word_arr[i+1],
+                            normalized_word_arr[i+2]])
 
+        output_batch.append([normalized_word_arr[i+3]])
+
+    print(len(input_batch))
+    print(len(output_batch))
+    print(input_batch[0])
+    print(output_batch[0])
 
 for file in files:
     # For each replay, train the model
-    f = open(file, "r")
+    """f = open(file, "r")
     print("Reading "+file+"...")
     phrase = f.read()
 
     chat_dict = txt_to_dict(phrase)
     data_dictionary = generate_dict(chat_dict)
-    print(txt_to_np_arr(phrase, data_dictionary[0]))
+    print(txt_to_np_arr(phrase, data_dictionary[0]))"""
+    generate_data(file)
 
-print(data_dictionary)
+# print(data_dictionary)
