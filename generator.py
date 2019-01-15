@@ -1,5 +1,5 @@
 import tensorflow as tf
-#from data_provider import DataProvider
+from data_provider import generate_data
 from lstm_model import LSTM_model
 import numpy as np
 
@@ -26,4 +26,7 @@ with g.as_default():
   sess.run(tf.global_variables_initializer())
 
   # Replace 600 with a dynamic vocabulary length from data provider
-  lstm_nn = LSTM_model(600, BATCH_SIZE, SEQUENCE_LENGTH, HIDDEN_LAYERS)
+  lstm_nn = LSTM_model(600, BATCH_SIZE, SEQUENCE_LENGTH, TARGET_LENGTH, HIDDEN_LAYERS)
+  data = generate_data('test/chat_jack.txt')
+
+  print(data)

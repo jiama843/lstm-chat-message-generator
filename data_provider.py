@@ -1,13 +1,13 @@
 import argparse, glob, sys, json, ast, copy
 from random import shuffle
 
-parser = argparse.ArgumentParser(prog="ship-movement",
+"""parser = argparse.ArgumentParser(prog="ship-movement",
                                  description="parse commands to the ship movement model")
 
 parser.add_argument('src_path', metavar='path', type=str, help="Path to a specific use's chat dialogue")
 
 args = parser.parse_args()
-files = glob.glob(args.src_path)
+files = glob.glob(args.src_path)"""
 
 def txt_to_np_arr(phrase, chat_dict):
     word_arr = phrase.split()
@@ -63,16 +63,17 @@ def generate_data(file):
     print(len(output_batch))
     print(input_batch[0])
     print(output_batch[0])
+    return [input_batch, output_batch]
 
-for file in files:
+"""for file in files:
     # For each replay, train the model
-    """f = open(file, "r")
+    f = open(file, "r")
     print("Reading "+file+"...")
     phrase = f.read()
 
     chat_dict = txt_to_dict(phrase)
     data_dictionary = generate_dict(chat_dict)
-    print(txt_to_np_arr(phrase, data_dictionary[0]))"""
+    print(txt_to_np_arr(phrase, data_dictionary[0]))
     generate_data(file)
 
-# print(data_dictionary)
+# print(data_dictionary)"""
