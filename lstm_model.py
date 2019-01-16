@@ -13,19 +13,21 @@ class LSTM_model:
         sequence_length,
         target_length,
         num_hidden_layers,
+        learning_rate = 0.001,
+        decay_rate = 0.97,
         training=True):
 
         self.word_count = vocabulary_size
+
         self.inputs = tf.placeholder(tf.float32, shape=(batch_size, sequence_length))
         self.targets = tf.placeholder(tf.int32, shape=(batch_size, target_length))
 
-        #print(self.inputs)
-        #print(self.targets)
+        self.learning_rate = learning_rate
+        self.decay_rate = decay_rate
 
-        rnn_cell = rnn.LSTMCell(num_hidden_layers)
+        rnn_cell = rnn.MultiRNNCell([rnn.LSTMCell(num_hidden_layers), rnn.LSTMCell(num_hidden_layers)])
+
         self.cell = rnn_cell
-
-        #print(rnn_cell.output_size)
 
         with tf.variable_scope("rnn", reuse=tf.AUTO_REUSE):
             softmax_layer = tf.get_variable("softmax_layer", [num_hidden_layers, vocabulary_size])
@@ -42,19 +44,17 @@ class LSTM_model:
             outputs, states = rnn.static_rnn(rnn_cell, inputs, dtype=tf.float32)
             output = outputs[-1]#tf.reshape(tf.concat(outputs, 1), [-1, num_hidden_layers])
 
-        print(outputs)
-        print(states)
-        print(output)
-
         self.logits = tf.matmul(output, softmax_layer) + softmax_bias
         self.probabilities = tf.nn.softmax(self.logits)
-        #self.probabilities =
 
-        print(self.logits)
-        print(self.targets)
+        #loss = tf.losses.sparse_softmax_cross_entropy(labels=self.targets, logits=self.logits)
+        loss = tf.keras.backend.categorical_crossentropy(self.targets, self.logits, from_logits=True)
+        self.cost = loss
 
-        loss = tf.losses.sparse_softmax_cross_entropy(labels=self.targets, logits=self.logits)
+        with tf.variable_scope("optimizer", reuse=tf.AUTO_REUSE):
+            optimizer = tf.train.AdamOptimizer(self.learning_rate)
+            self.train_step = optimizer.minimize(self.cost)
 
         tf.summary.histogram("logits", self.logits)
-        tf.summary.histogram("probabilitiess", self.probabilities)
+        tf.summary.histogram("probabilities", self.probabilities)
         tf.summary.histogram("loss", loss)
