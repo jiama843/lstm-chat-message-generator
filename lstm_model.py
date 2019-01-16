@@ -38,7 +38,7 @@ class LSTM_model:
 
         inputs = tf.split(inputs, sequence_length, 1)
 
-        print(inputs)
+        #print(inputs)
 
         with tf.variable_scope("rnn", reuse=tf.AUTO_REUSE):
             outputs, states = rnn.static_rnn(rnn_cell, inputs, dtype=tf.float32)
@@ -60,9 +60,13 @@ class LSTM_model:
         tf.summary.histogram("loss", loss)
 
     def predict_word(self, sess, input, chat_dict):
-        feed = {self.inputs: chat_dict[0][input] }
+        feed_in = []
+        for _word in input:
+            feed_in.append(chat_dict[0][_word])
+
+        feed = {self.inputs: [feed_in] }
         probabilities = sess.run(self.probabilities, feed)
 
         probability = probabilities[0]
-        word = chat_dict[1][probability]
+        word = chat_dict[1][probability[0]]
         return word
