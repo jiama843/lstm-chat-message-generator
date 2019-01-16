@@ -1,1 +1,1 @@
-These are some basic sample testing files.
+These are some basic testing files.
