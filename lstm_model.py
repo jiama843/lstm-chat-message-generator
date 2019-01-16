@@ -58,3 +58,11 @@ class LSTM_model:
         tf.summary.histogram("logits", self.logits)
         tf.summary.histogram("probabilities", self.probabilities)
         tf.summary.histogram("loss", loss)
+
+    def predict_word(self, sess, input, chat_dict):
+        feed = {self.inputs: chat_dict[0][input] }
+        probabilities = sess.run(self.probabilities, feed)
+
+        probability = probabilities[0]
+        word = chat_dict[1][probability]
+        return word

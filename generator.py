@@ -7,13 +7,13 @@ import numpy as np
 BATCH_SIZE = 1
 SEQUENCE_LENGTH = 3
 TARGET_LENGTH = 1
-LEARNING_RATE = 0.01
+LEARNING_RATE = 0.001
 DECAY_RATE = 0.97
 HIDDEN_LAYERS = 1000
 
 tensorboard_dir = "./data_summaries"
 
-def train_lstm():
+def train_lstm(sess):
   g = tf.Graph()
   with g.as_default():
     # Operations created in this scope will be added to `g_1`.
@@ -24,8 +24,6 @@ def train_lstm():
     data = generate_data('test/chat_jack.txt')
 
     # Sessions created in this scope will run operations from `g_1`.
-    sess = tf.Session()
-
     summaries = tf.summary.merge_all()
     writer = tf.summary.FileWriter(tensorboard_dir)
     writer.add_graph(sess.graph)
@@ -39,4 +37,19 @@ def train_lstm():
 
       sess.run(lstm_nn.train_step, feed)
 
-train_lstm()
+def text_gen(sess, input, length):
+  # Shift batches based on initial input to continue generating text
+  curr_input = input
+  data = generate_data('test/chat_jack.txt')
+
+  for i in range(0, length):
+    lstm_nn = LSTM_model(1, BATCH_SIZE, SEQUENCE_LENGTH, TARGET_LENGTH, HIDDEN_LAYERS, training=False)
+    word = lstm_nn.predict_word(sess, curr_input, data[2])
+    print(word)
+
+    # This needs to be customized based on SEQUENCE_LENGTH later on
+    curr_input = [curr_input[1], curr_input[2], word]
+
+sess = tf.Session()
+#train_lstm(sess)
+#text_gen(sess, ["oh", "oh", "oh"], 20)

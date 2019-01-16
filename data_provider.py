@@ -63,7 +63,7 @@ def generate_data(file):
     print(len(output_batch))
     print(input_batch[0])
     print(output_batch[0])
-    return [input_batch, output_batch]
+    return [input_batch, output_batch, data_dictionary]
 
 """for file in files:
     # For each replay, train the model
