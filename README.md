@@ -6,7 +6,7 @@ The current version will take in a path to a data location, train, and then gene
 # Things to be improved:
 - Save checkpoints so that the model can be used for serving, also so that the program doesn't need to retrain each run.
 - Sequence length of 3 may not be the most efficient
-- Improve how batches are made
+- Improve how batches are created
 - Abstract some of the functions for robustness
 
 # Usage
