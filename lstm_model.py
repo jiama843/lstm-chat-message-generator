@@ -42,7 +42,9 @@ class LSTM_model:
 
         with tf.variable_scope("rnn", reuse=tf.AUTO_REUSE):
             outputs, states = rnn.static_rnn(rnn_cell, inputs, dtype=tf.float32)
-            output = outputs[-1]#tf.reshape(tf.concat(outputs, 1), [-1, num_hidden_layers])
+            output = tf.reshape(tf.reshape(tf.concat(outputs, 1), [-1, num_hidden_layers])[-1], [-1, num_hidden_layers])
+
+        #print(output)
 
         self.logits = tf.matmul(output, softmax_layer) + softmax_bias
         self.probabilities = tf.nn.softmax(self.logits)
@@ -68,5 +70,7 @@ class LSTM_model:
         probabilities = sess.run(self.probabilities, feed)
 
         probability = probabilities[0]
-        word = chat_dict[1][probability[0]]
+        #print(probability)
+        word_val = np.argmax(probability)
+        word = chat_dict[1][word_val]
         return word

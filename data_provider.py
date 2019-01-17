@@ -1,14 +1,6 @@
 import argparse, glob, sys, json, ast, copy
 from random import shuffle
 
-"""parser = argparse.ArgumentParser(prog="ship-movement",
-                                 description="parse commands to the ship movement model")
-
-parser.add_argument('src_path', metavar='path', type=str, help="Path to a specific use's chat dialogue")
-
-args = parser.parse_args()
-files = glob.glob(args.src_path)"""
-
 def txt_to_np_arr(phrase, chat_dict):
     word_arr = phrase.split()
     normalized_arr = []
@@ -37,7 +29,7 @@ def generate_dict(word_dict):
         dictionary[key] = word_id
         word_id += 1
 
-    reverse_dictionary = dict(zip(word_dict.values(), word_dict.keys()))
+    reverse_dictionary = dict((v,k) for k,v in dictionary.items())
     return [dictionary, reverse_dictionary]
 
 def generate_data(file):
@@ -57,12 +49,14 @@ def generate_data(file):
                             normalized_word_arr[i+1],
                             normalized_word_arr[i+2]])
 
-        output_batch.append([normalized_word_arr[i+3]])
+        output = [0] * len(data_dictionary[0])
+        output[normalized_word_arr[i + 3]] = 1
+        output_batch.append(output)
 
-    print(len(input_batch))
-    print(len(output_batch))
-    print(input_batch[0])
-    print(output_batch[0])
+    #print(len(input_batch))
+    #print(len(output_batch))
+    #print(input_batch[0])
+    #print(output_batch[0])
     return [input_batch, output_batch, data_dictionary]
 
 """for file in files:
