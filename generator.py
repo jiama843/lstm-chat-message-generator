@@ -67,6 +67,8 @@ def text_gen(sess, input, length):
 
 sess = tf.Session()
 train_lstm(sess)
-text_gen(sess, [data[2][1][random.randint(0, TARGET_LENGTH - 1)],
-                data[2][1][random.randint(0, TARGET_LENGTH - 1)],
-                data[2][1][random.randint(0, TARGET_LENGTH - 1)]], 300)
+
+start_sentence = random.randint(0, TARGET_LENGTH - 4)
+text_gen(sess, [data[2][1][start_sentence],
+                data[2][1][start_sentence + 1],
+                data[2][1][start_sentence + 2], 300)
