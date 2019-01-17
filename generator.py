@@ -71,4 +71,4 @@ train_lstm(sess)
 start_sentence = random.randint(0, TARGET_LENGTH - 4)
 text_gen(sess, [data[2][1][start_sentence],
                 data[2][1][start_sentence + 1],
-                data[2][1][start_sentence + 2], 300)
+                data[2][1][start_sentence + 2]], 300)
