@@ -20,7 +20,7 @@ Output will look like this:
 ITERATION: <total-1>/<total>
 ITERATION: <total>/<total>
 EPOCH: i, Loss = <LOSS>
-Reading <file?
+Reading <file>
 <predicted text>
 ```
 
