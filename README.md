@@ -24,5 +24,15 @@ Reading <file>
 <predicted text>
 ```
 
-***For best results, use a consistent dataset with a reasonable number of epochs.***
+Sample generation from a batch size of ~900 and 1 epoch on /test/chat_jack.txt:
+```
+ITERATION: 901/904
+ITERATION: 902/904
+ITERATION: 903/904
+EPOCH: 0, Loss = Tensor("strided_slice:0", shape=(), dtype=float32)
+Reading test/chat_jack.txt...
+toy as came i ll in in i i i in in in wait wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait
+```
+
+***For best results, use a consistent dataset of considerable scale with a reasonable number of epochs.***
 
