@@ -17,8 +17,8 @@ The current version will take in a path to a data location, train, and then gene
 
 Output will look like this:
 ```
-ITERATION: <total-1>/<total?
-ITERATION: <total>/<1704>
+ITERATION: <total-1>/<total>
+ITERATION: <total>/<total>
 EPOCH: i, Loss = <LOSS>
 Reading <file?
 <predicted text>
