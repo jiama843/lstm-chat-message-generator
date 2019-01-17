@@ -10,5 +10,6 @@ The current version will take in a path to a data location, train, and then gene
 # Usage
 1. Download the code into a folder
 2. Scrape a set of chat messages and put them in a .txt file
-3. Run `python generator.py` with the chat location specified
+3. Run `python generator.py` with the chat location specified. (Use -h for specifics)
 4. The program will train on the data provided and output some generated text upon completion
+
