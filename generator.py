@@ -9,6 +9,7 @@ parser = argparse.ArgumentParser(prog="yikes_lolintator",
                                  description="Send a sample text file to the yikes lolinator")
 
 parser.add_argument('src_path', metavar='path', type=str, help="Path to a specific user's chat dialogue (.txt)")
+parser.add_argument('epochs', metavar='num_epochs', type=int, help="Number of epochs to train for")
 
 args = parser.parse_args()
 files = glob.glob(args.src_path)
@@ -24,7 +25,7 @@ LEARNING_RATE = 0.001
 DECAY_RATE = 0.97
 HIDDEN_LAYERS = 1000
 
-epochs = 1
+epochs = args.epochs or 1
 
 tensorboard_dir = "./data_summaries"
 
