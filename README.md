@@ -15,5 +15,14 @@ The current version will take in a path to a data location, train, and then gene
 3. Run `python generator.py` with the chat location specified and number of epochs. (Use -h for specifics)
 4. The program will train on the data provided and output some generated text upon completion
 
+Output will look like this:
+```
+ITERATION: <total-1>/<total?
+ITERATION: <total>/<1704>
+EPOCH: i, Loss = <LOSS>
+Reading <file?
+<predicted text>
+```
+
 ***For best results, use a consistent dataset with a reasonable number of epochs.***
 
