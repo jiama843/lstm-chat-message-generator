@@ -31,7 +31,16 @@ ITERATION: 902/904
 ITERATION: 903/904
 EPOCH: 0, Loss = Tensor("strided_slice:0", shape=(), dtype=float32)
 Reading test/chat_jack.txt...
-toy as came i ll in in i i i in in in wait wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait i get i in i in wait in wait
+toy as came i ll in in i i i in in in wait wait i get i in i in wait in wait i get i in i in wait in wait ...
+```
+
+Sample generation from Aesop's Fables and 200 epochs:
+```
+ITERATION: 1476/1478
+ITERATION: 1477/1478
+EPOCH: 199, Loss = Tensor("strided_slice_199:0", shape=(), dtype=float32)
+Reading test/Aesop.txt...
+punish take vengeance the little Mouse: Little friends may prove great friends may prove great...
 ```
 
 ***For best results, use a consistent dataset of considerable scale with a reasonable number of epochs.***
